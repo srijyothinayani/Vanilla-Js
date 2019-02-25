@@ -1,0 +1,93 @@
+table {
+    width: 40em;
+    margin: 2em auto;
+  }
+  
+  thead {
+    background-color: #6699FF;
+    font-weight: bold;
+  }
+  
+  td {
+    width: 10em;
+    padding: 0.8em;
+  }
+  
+  .paginated th {
+    width: 10em;
+    padding: 0.8em;
+  }
+  
+  tbody {
+    background: #ccc;
+  }
+  
+  div.pager {
+    text-align: right;
+    margin: 1em 0;
+  }
+  
+  div.pager span {
+    display: inline-block;
+    width: 1.8em;
+    height: 1.8em;
+    line-height: 1.8;
+    text-align: center;
+    cursor: pointer;
+    background: #000;
+    color: #fff;
+    margin-right: 0.5em;
+  }
+  
+  div.pager span.active {
+    background: #c00;
+  }
+  
+  tr {
+    padding: 1em;
+  }
+  div.alignment-right {
+    text-align: right;
+    display: flex
+  }
+  
+  .prev, .next {
+      width: 80px;
+      color: white;
+      float: right;
+      text-align: center;
+      margin-right: 10px;
+      padding: 0.6em;
+  }
+  
+  .prev, .next {
+    background-color: Red;
+    color: white;
+      border: 1px solid green;
+      cursor: pointer;
+      padding: 0.6em;
+  }
+  
+  .prev.active, .next.active {
+      border: 1px solid red;
+      color: white;
+      cursor: default;
+      padding: 0.6em;
+  }
+  
+  select#Rank {
+    padding: 0.6em;
+  }
+  div#buttons {
+    float: right;
+    padding: 0 10em 4em 0;
+  }
+  div#buttons .dynamic-span {
+    padding: 8px;
+  }
+
+  #slected-option {
+    width: 50%;
+    font-size: 18px;
+    padding: 0 20em 4em 20em;
+  }

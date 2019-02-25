@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js">
+</script>
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="config.json"></script>
+<script>
+    // $(document).ready(function () {
+    //     // $.getJSON(
+    //     var json = [
+    //         {
+    //             "User_Name": "John Doe",
+    //             "barnd": "abc",
+    //             "active": "true",
+    //             "order_by": "3132"
+    //         },
+    //         {
+    //             "User_Name": "Jane Smith",
+    //             "barnd": "xyz",
+    //             "active": "true",
+    //             "order_by": "3132"
+    //         },
+    //         {
+    //             "User_Name": "Chuck Berry",
+    //             "barnd": "axb",
+    //             "active": "false",
+    //             "order_by": "oreopy"
+    //         },
+    //         {
+    //             "User_Name": "Berry",
+    //             "barnd": "yab",
+    //             "active": "true",
+    //             "order_by": "hsakjhsdgak"
+    //         },
+    //         {
+    //             "User_Name": "Berry",
+    //             "barnd": "yab",
+    //             "active": "true",
+    //             "order_by": "hsakjhsdgak"
+    //         },
+    //         {
+    //             "User_Name": "Berry",
+    //             "barnd": "yab",
+    //             "active": "true",
+    //             "order_by": "hsakjhsdgak"
+    //         },
+    //         {
+    //             "User_Name": "Berry",
+    //             "barnd": "yab",
+    //             "active": "true",
+    //             "order_by": "hsakjhsdgak"
+    //         },
+    //         {
+    //             "User_Name": "Berry",
+    //             "barnd": "yab",
+    //             "active": "true",
+    //             "order_by": "hsakjhsdgak"
+    //         }
+    //     ];
+    //     //     function (json) {
+    //     var tr;
+    //     for (var i = 0; i < json.length; i++) {
+    //         tr = $('<tr/>');
+    //         tr.append("<td>" + i + "</td>");
+    //         tr.append("<td>" + json[i].User_Name + "</td>");
+    //         tr.append("<td>" + json[i].barnd + "</td>");
+    //         tr.append("<td>" + json[i].active + "</td>");
+    //         tr.append("<td>" + json[i].order_by + "</td>");
+
+    //         $('table').append(tr);
+    //     }
+    //     // };
+    //     $("tbody tr:odd").css("background-color", "#ffffff");
+    //     $("tbody tr:even").css("background-color", "#EBF3F6");
+    //     $("thead tr").css("background-color", "#6699FF");
+
+    //     // get the table element
+    //     var $table = document.getElementsByClassName("paginated"),
+    //         $table = $table[0],
+
+    //         $rowCount = $table.rows.length,
+    //         $firstRow = $table.rows[0].firstElementChild.tagName,
+    //         $hasHead = ($firstRow === "TH"),
+    //         $tr = [],
+    //         $i, $ii, $j = ($hasHead) ? 1 : 0,
+    //         $th = ($hasHead ? $table.rows[(0)].outerHTML : "");
+    //     var $pageCount = Math.ceil($rowCount / $n);
+    //     if ($pageCount > 1) {
+    //         for ($i = $j, $ii = 0; $i < $rowCount; $i++ , $ii++)
+    //             $tr[$ii] = $table.rows[$i].outerHTML;
+    //         $table.insertAdjacentHTML("afterend", "<div id='buttons'></div");
+    //         sort(1);
+    //     }
+
+
+    //     function sort($p) {
+
+    //         var $rows = $th, $s = (($n * $p) - $n);
+    //         for ($i = $s; $i < ($s + $n) && $i < $tr.length; $i++)
+    //             $rows += $tr[$i];
+
+    //         $table.innerHTML = $rows;
+    //         document.getElementById("buttons").innerHTML = pageButtons($pageCount, $p);
+    //         document.getElementById("id" + $p).setAttribute("class", "dynamic-span active");
+    //     }
+    //     function pageButtons($pCount, $cur) {
+
+    //         var $prevDis = ($cur == 1) ? "disabled" : "",
+    //             $nextDis = ($cur == $pCount) ? "disabled" : "",
+    //             $buttons = "<input class='dynamic-span' type='button' data-number='" + ($cur - 1) + "' id ='previous' value='&lt;&lt; Prev' " + $prevDis + ">";
+    //         for ($i = 1; $i <= $pCount; $i++)
+    //             $buttons += "<input class='dynamic-span' type='button' data-number=" + $i + "  id='id" + $i + "'value='" + $i + "'>";
+    //         $buttons += "<input class='dynamic-span' type='button' data-number='" + ($cur + 1) + "'  id ='last' value='Next &gt;&gt;' " + $nextDis + ">";
+    //         return $buttons;
+    //     }
+
+    //     document.body.onclick = function (e) {
+    //         e = window.event || e;
+    //         var targetDomObject = e.target || e.srcElement;
+
+    //         //extra checks to make sure object exists
+    //         if ((targetDomObject) && (targetDomObject.classList) && (targetDomObject.classList.contains("dynamic-span"))) {
+    //             var number = targetDomObject.getAttribute("data-number");
+    //             sort(number);
+    //         }
+    //     }
+
+    // });
+
+
+    $(document).ready(startUp);
+    function startUp() {
+        var json = [
+            {
+                "User_Name": "John Doe",
+                "barnd": "abc",
+                "active": "true",
+                "order_by": "3132"
+            },
+            {
+                "User_Name": "Jane Smith",
+                "barnd": "xyz",
+                "active": "true",
+                "order_by": "3132"
+            },
+            {
+                "User_Name": "Chuck Berry",
+                "barnd": "axb",
+                "active": "false",
+                "order_by": "oreopy"
+            },
+            {
+                "User_Name": "Berry",
+                "barnd": "yab",
+                "active": "true",
+                "order_by": "hsakjhsdgak"
+            },
+            {
+                "User_Name": "Berry",
+                "barnd": "yab",
+                "active": "true",
+                "order_by": "hsakjhsdgak"
+            },
+            {
+                "User_Name": "Berry",
+                "barnd": "yab",
+                "active": "true",
+                "order_by": "hsakjhsdgak"
+            },
+            {
+                "User_Name": "Berry",
+                "barnd": "yab",
+                "active": "true",
+                "order_by": "hsakjhsdgak"
+            },
+            {
+                "User_Name": "Berry",
+                "barnd": "yab",
+                "active": "true",
+                "order_by": "hsakjhsdgak"
+            }
+        ];
+        //     function (json) {
+        var tr;
+        for (var i = 0; i < json.length; i++) {
+            tr = $('<tr/>');
+            tr.append("<td>" + i + "</td>");
+            tr.append("<td>" + json[i].User_Name + "</td>");
+            tr.append("<td>" + json[i].barnd + "</td>");
+            tr.append("<td>" + json[i].active + "</td>");
+            tr.append("<td>" + json[i].order_by + "</td>");
+
+            $('table').append(tr);
+        }
+        // };
+        $("tbody tr:odd").css("background-color", "#ffffff");
+        $("tbody tr:even").css("background-color", "#EBF3F6");
+        $("thead tr").css("background-color", "#6699FF");
+        var $table = document.getElementsByClassName("paginated"),
+            $table = $table[0],
+            $n = changeCount(),
+            $rowCount = $table.rows.length,
+            $firstRow = $table.rows[0].firstElementChild.tagName,
+            $hasHead = ($firstRow === "TH"),
+            $tr = [],
+            $i, $ii, $j = ($hasHead) ? 1 : 0,
+            $th = ($hasHead ? $table.rows[(0)].outerHTML : "");
+        var $pageCount = Math.ceil($rowCount / changeCount());
+        if ($pageCount > 1) {
+            for ($i = $j, $ii = 0; $i < $rowCount; $i++ , $ii++)
+                $tr[$ii] = $table.rows[$i].outerHTML;
+            $table.insertAdjacentHTML("afterend", "<div id='buttons'></div");
+            sort(1);
+        }
+
+        function sort($p) {
+            var $rows = $th, $s = ((changeCount() * $p) - changeCount());
+            console.log($i, $s, changeCount(), $i, $tr.length)
+            for ($i = $s; $i < ($s + changeCount()) && $i < $tr.length; $i++)
+                $rows += $tr[$i];
+
+            $table.innerHTML = $rows;
+            document.getElementById("buttons").innerHTML = pageButtons($pageCount, $p);
+            document.getElementById("id" + $p).setAttribute("class", "dynamic-span active");
+        }
+
+
+        function pageButtons($pCount, $cur) {
+            var $prevDis = ($cur == 1) ? "disabled" : "",
+                $nextDis = ($cur == $pCount) ? "disabled" : "",
+
+                $buttons = "<input type='button' class='dynamic-span' id='' value='&lt;&lt; Prev'  data-number='" + ($cur - 1) + "' " + $prevDis + ">";
+            for ($i = 1; $i <= $pCount; $i++)
+                $buttons += "<input type='button' class='dynamic-span' data-number='" + ($i) + "'  id='id" + $i + "'value='" + $i + "'>";
+            $buttons += "<input type='button' class='dynamic-span' data-number='" + ($cur + 1) + "'  value='Next &gt;&gt;' onclick='sort(" + ($cur + 1) + ")' " + $nextDis + ">";
+            return $buttons;
+        }
+        document.body.onclick = function (e) {
+            e = window.event || e;
+            var targetDomObject = e.target || e.srcElement;
+            if ((targetDomObject) && (targetDomObject.classList) && (targetDomObject.classList.contains("dynamic-span"))) {
+                var number = targetDomObject.getAttribute("data-number");
+                sort(number);
+            }
+        }
+    }
+    function changeCount() {
+        var eID = document.getElementById("item-count"),
+            dayVal = eID.options[eID.selectedIndex].value;
+
+        return parseInt(dayVal);
+    }
+</script>
+
+<body>
+
+    <table class="paginated">
+        <thead>
+            <tr>
+
+                <th scope="col">Preference Id</th>
+                <th scope="col">name</th>
+                <th scope="col">Brand</th>
+                <th scope="col">Active</th>
+                <th scope="col">Ordered By</th>
+                <th scope="col">Updated By</th>
+
+            </tr>
+        </thead>
+    </table>
+    <div id="slected-option">
+
+        Show <select id="item-count" onchange="changeCount()">
+            <option value=1 selected="selected">1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+        </select>​ items at a time
+    </div>
+
+</body>
+
+
+
+
+</html>
